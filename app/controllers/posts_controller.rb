@@ -6,10 +6,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-    end
+    render json: @posts
+  end
+
+  def no_comments
+    @posts = Post.all
+
+    render json: @posts, serializer: PostNoCommentsSerializer
   end
 
   # GET /posts/1
