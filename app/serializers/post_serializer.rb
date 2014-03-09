@@ -1,3 +1,5 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :index
+  attributes :id, :title, :body
+
+  has_many :comments
 end
