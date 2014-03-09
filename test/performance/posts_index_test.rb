@@ -6,7 +6,18 @@ class PostsIndexTest < ActionDispatch::PerformanceTest
   # self.profile_options = { runs: 5, metrics: [:wall_time, :memory],
   #                          output: 'tmp/performance', formats: [:flat] }
 
-  test "homepage" do
-    get '/'
+  def setup
+    posts = Fabricate.times(30, :post)
+    posts.each do |post|
+      Fabricate.times(10, :comment, post: post)
+    end
+  end
+
+  test "posts/index - with has_many" do
+    get "/posts"
+  end
+
+  test "posts/index - without has_many"
+    get "/posts/no_comments"
   end
 end

@@ -36,6 +36,8 @@ end
 
 group :development, :test do
   gem 'rails-perftest'
+  gem 'ruby-prof'
+  gem 'fabrication'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
