@@ -1,4 +1,8 @@
 AmsBlog::Application.routes.draw do
+
+  resources :posts do
+    get "/no_comments", to: "posts#no_comments"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
