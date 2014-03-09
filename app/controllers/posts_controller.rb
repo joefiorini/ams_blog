@@ -4,15 +4,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.includes(:comments)
+    @comments = @posts.map(&:comments).flatten.uniq
 
     render json: @posts
   end
 
   def no_comments
     @posts = Post.all
+    @comments = []
 
-    render json: @posts, serializer: PostNoCommentsSerializer
+    render json: @posts
   end
 
   # GET /posts/1
@@ -83,4 +85,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:index)
     end
+
 end
