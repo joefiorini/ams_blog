@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def no_comments
     @posts = Post.all
 
-    render json: @posts, serializer: PostNoCommentsSerializer
+    render json: @posts, each_serializer: PostNoCommentsSerializer
   end
 
   # GET /posts/1
