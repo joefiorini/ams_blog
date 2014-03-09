@@ -17,7 +17,7 @@ class PostsIndexTest < ActionDispatch::PerformanceTest
     get "/posts"
   end
 
-  test "posts/index - without has_many"
+  test "posts/index - without has_many" do
     get "/posts/no_comments"
   end
 end
