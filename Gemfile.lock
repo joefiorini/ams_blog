@@ -1,7 +1,6 @@
 GIT
-  remote: git://github.com/joefiorini/active_model_serializers.git
-  revision: f8e9bd89d5287d52b966da8df364159e46e00189
-  branch: has_one_nil_fix
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 97f79141077a522269257c94d64c577ecf26fe3c
   specs:
     active_model_serializers (0.9.0.alpha1)
       activemodel (>= 3.2)
